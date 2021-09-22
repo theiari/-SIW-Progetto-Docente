@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title=Medico)"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+    <div class="center">
+    	<h4>Medico:</h4>
+    	<div th:if="${medico}" th:object="${medico}">
+    	<h5>nome:</h5>
+    	<div class="center">
+			<h5 th:text="*{nome}">nome</h5>
+			</div>
+			
+			<h5>cognome:</h5>
+    	<div class="center">
+			<h5 th:text="*{cognome}">cognome</h5>
+			</div>
+			
+			<h5>specializzazione:</h5>
+    	<div class="center">
+			<h5 th:text="*{specializzazione}">specializzazione</h5>
+			</div>
+			
+		</div>
+   		</div>
+   		</div>
+   
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

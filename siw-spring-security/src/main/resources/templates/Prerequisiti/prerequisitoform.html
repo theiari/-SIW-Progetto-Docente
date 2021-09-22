@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='InsPrerequisito')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div>
+		<h4>Inserisci prerequisito</h4>
+	</div>
+	<form th:action="@{/prerequisitoForm}" method="POST" th:object="${prerequisito}">
+		<div class="center">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+			<div>
+				<span>Valore:</span>
+				<span><input type="text" th:field="${prerequisito.valore}" /></span>
+				<span th:if="${#fields.hasErrors('valore')}" th:errors="*{valore}"></span>
+			</div>	
+			<div>
+				<span>Descrizione:</span>
+				<span><input type="text" th:field="${prerequisito.descrizione}" /></span>
+				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+			</div>	
+			<div>
+				<span><button type="submit">SUBMIT</button></span>
+			</div>
+		</div>
+	</form>
+	</div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

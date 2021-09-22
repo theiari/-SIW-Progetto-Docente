@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/my-style.css}" rel="stylesheet">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:fragment="intestazione">
+		 <h1 class="header"> CLINICA ROSSI</h1>
+		 <div class="topnavLogout">
+       <a href="/default">Home</a>
+       <a href="/esami">Esami</a>
+       <a href="/dottori">Dottori</a>
+       <a href="/login">Login</a>
+       <a th:href="@{/logout}">Logout</a>
+       </div>	
+		 	</header>
+
+	<p>Go to the next page to see fragments in action</p>
+	<aside>
+		<div>This is a sidebar</div>
+	</aside>
+	<div class="another">This is another sidebar</div>
+	
+	<footer th:fragment="fondo">
+	<div class="foot center">
+		<a th:href="@{${default}}">Home</a>
+		<span>-   Antonino Iaria 533712</span>
+		</div>
+	</footer>
+</body>
+</html>

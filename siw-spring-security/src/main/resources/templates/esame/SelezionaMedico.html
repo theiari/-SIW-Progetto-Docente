@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=Indicatori)"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div>
+	<div class="center spaziaPoco riquadroDescr">Seleziona il medico da associare all' esame</div>
+	<div id="related_links" class="center">
+    	<h4>Lista dei medici</h4>
+		<ul>
+			<li th:each="medico : ${medici}">
+				<a href="medico.html" 
+				   th:href="@{'selezionaMedico' + '/' + ${medico.id}}" 
+				   th:text="${medico.nome}+ '   ' +${medico.specializzazione}"></a>
+			</li>
+		</ul>
+		</div>
+	</div>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

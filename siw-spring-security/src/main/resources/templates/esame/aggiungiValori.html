@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=Medici)"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div>
+	<div class="center spaziaPoco riquadroDescr">Aggiungi la descrizione</div>
+	  <div id="related_links" class="center">
+	  	<li th:each="indicatore : ${indicatori}">
+				<h5 th:text="${indicatore.nome}"></a>
+			</li>
+    	<form th:action="@{'/aggIndicatore' +'/' + ${esame.id}}" method="POST" >
+      <h5 th:text="${indicatori.size()}"> </h5>
+      <input type="text" th:field="${esame.risu[0]}" >
+      <input type="text" th:field="${esame.risu[1]}" >
+      <input type="text" th:field="${esame.risu[2]}" >
+      <input type="text" th:field="${esame.risu[3]}" >
+      <input type="text" th:field="${esame.risu[4]}" >
+      
+      <div>
+				<span><button type="submit">SUBMIT</button></span>
+			</div>
+      
+      
+     </form>
+				
+		
+		</div>
+	</div>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

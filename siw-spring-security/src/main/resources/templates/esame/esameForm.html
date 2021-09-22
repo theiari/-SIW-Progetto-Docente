@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='InEsame')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div class="center">
+		<h4>Inserisci esame</h4>
+	</div>
+	<form th:action="@{/esameForm}" method="POST" th:object="${esame}">
+	
+		<div class="center">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+		<div>
+		<span>Data prenotazione:</span>
+				<span><input type="text" th:field="*{prenotato}" /></span>
+				
+		
+		</div>
+		<p>  </p>
+	
+			<div>
+			<span>Tipologia esame:</span>
+				<select  name="taskTipologiaEsame">
+                         <option value=""> -- </option>
+                         <option th:each="tipologiaEsame : ${tipologiaEsami}"
+                            th:value="${tipologiaEsame.id}"
+                            th:utext="${tipologiaEsame.descrizione}"/>
+                  </select>
+			
+				
+			</div>	
+			
+			<p>  </p>
+			<div>
+			<span>Medico relativo:</span>
+			<select  name="taskMedico">
+                         <option value=""> -- </option>
+                         <option th:each="medico : ${medici}"
+                            th:value="${medico.id}"
+                            th:utext="${medico.cognome}"/>
+                  </select>
+           </div>
+           <p>  </p>
+                  <div>
+                  
+					<span>Paziente relativo:</span>
+                  
+                  <select  name="taskPaziente">
+                         <option value=""> -- </option>
+                         <option th:each="paziente : ${pazienti}"
+                            th:value="${paziente.id}"
+                            th:utext="${paziente.cognome}"/>
+                  </select>
+
+			<div>
+				<span><button type="submit">SUBMIT</button></span>
+			</div>
+		</div>
+		</div>
+	</form>
+	</div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

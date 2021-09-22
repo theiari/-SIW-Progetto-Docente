@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='ClinicaRossi')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div class="transparentbox">
+    	<h4 th:text="#{header.index}">Welcome</h4>
+    	<div class="center"> La clinica Rossi ti da il benvenuto! Visita la sezione esami per scoprire tutte le informazioni relative alle analisi che svolgiamo </div>
+		<div class="center"> O in alternativa, accedi per visualizzarne i risultati</div>
+		<span></span>
+		
+		<div class="center">
+			<a th:href="@{/login}" th:text="#{index.login}">Accedi</a>
+   		</div>
+   		<div class="center"> Solo i pazienti possono accedere e visuallizzare i propri esami</div>
+   		<span> </span>
+   	
+		
+    </div>
+    <footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: headerfiles(title='SIW')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+    <div class="transparentbox">
+    	<h4 class="center riquadro" th:text="#{header.menuAdmin}">Menu amministratore</h4>
+		
+   		
+ <p>
+</p>
+
+<div class="parent2 fontFigo">
+  <div>
+    <h4>Medici
+</h4>
+  <a href="/admin/medicoForm">inserisci nuovo medico</a>
+  <a href="/Medici">mostra medici</a>
+  <a href="/admin/SelezionaMedico">Visualizza esami di un medico</a>
+
+</div>
+
+  <div>
+    <h4>Pazienti
+</h4>
+  <a href="/register">inserisci nuovo paziente</a>
+ 
+ 
+</div>
+</div>
+
+
+<div class="parent fontFigo">
+
+<div>
+    <h4>Prerequisito
+</h4>
+  <a href="/AggPrerequisito">inserisci prerequisito</a>
+  <a href="/prerequisiti">mostra prerequisiti</a>
+</div>
+
+<div>
+    <h4>Esame
+</h4>
+   <a href="/admin/esameForm">inserisci esame</a>
+  <a href="/Esami">mostra esami</a>
+</div>
+
+<div>
+    <h4>Tipologia Esame
+</h4>
+   <a href="/admin/tipologiaesameForm">inserisci tipologia esame</a>
+  <a href="/TipologiaEsame">mostra tipologia esami</a>
+</div>
+
+</div>
+
+<div class="parent fontFigo">
+
+<div>
+    <h4>Indicatore
+</h4>
+   <a href="/admin/indicatoreForm">inserisci indicatore</a>
+   <a href="/admin/associaIndicatori">associa indicatori alla tipologia esami</a>
+  <a href="/indicatori">mostra indicatori</a>
+  
+  
+</div>
+
+<div>
+    <h4>Logout
+</h4>
+   <a href="/logout">effettua il logout</a>
+  
+</div>
+
+<div>
+    <h4>Risultati
+</h4>
+   <a href="/admin/risultatiForm">carica i risultati</a>
+  
+</div>
+
+
+</div>
+
+
+</div>
+    <footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

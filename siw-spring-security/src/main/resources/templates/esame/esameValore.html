@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title='InEsame')"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div>
+		<h4>Inserisci esame</h4>
+	</div>
+	<form th:action="@{/esameForm}" method="POST" th:object="${esame}">
+		<div class="center">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+			<div>
+				<span>Inserisci il valore:</span>
+				<span><input type="text" th:field="${esame.nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+			</div>	
+
+			<div>
+				<span><button type="submit">SUBMIT</button></span>
+			</div>
+		</div>
+	</form>
+	</div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

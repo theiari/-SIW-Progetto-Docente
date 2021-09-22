@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(title=Medici)"> </head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="transparentbox">
+	<div>
+	<div class="center spaziaPoco riquadroDescr">Questi sono gli esami</div>
+	<div id="related_links" class="center">
+    	<h4>Lista degli esami</h4>
+		<ul>
+			<li th:each="esame : ${esami}">
+			<a href="prerequisito.html" 
+				 th:href="@{'esame' + '/' + ${esame.id}}"
+				   th:text="${esame.prenotato}"></a>
+			
+				
+		</ul>
+		</div>
+	</div>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>
