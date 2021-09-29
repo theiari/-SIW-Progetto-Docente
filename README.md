@@ -7,4 +7,4 @@ Casi d'uso implementati:
 •UC3
 •UC4
 •UC5 (semplificato)
-
+•UC6
