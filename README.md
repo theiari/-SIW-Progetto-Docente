@@ -6,5 +6,5 @@ Casi d'uso implementati:
 •UC2
 •UC3
 •UC4
-•UC5 (semplificato)
+•UC5
 •UC6
